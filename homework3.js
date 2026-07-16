@@ -10,16 +10,22 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
+  const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
+  console.log(nombresEstudiantes[1]); 
 }
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
+  const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
+ console.log(nombresEstudiantes[nombresEstudiantes.length - 1]);
 }
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
+  const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
+  console.log(nombresEstudiantes.length);
 }
 
 function incrementarPorUno(array) {
