@@ -33,7 +33,7 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  const enteros = [1, 2, 3, 4];
+  const array = [1, 2, 3, 4];
 
   for (let i = 0; i < array.length; i++) {
     array[i]++;
@@ -57,7 +57,7 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // Pista: usa el método `.unshift`
   // Tu código:
   const nombresEstudiantes = ['felipe', 'Anto', 'antonio', 'salmon'];
-   console.log(nombresEstudiantes.length.unshift(ALBERTO));
+   console.log(nombresEstudiantes.unshift(ALBERTO));
 }
 
 
@@ -118,7 +118,7 @@ function numeroMasGrande(numeros) {
   // Devuelve el número más grande
   // Tu código:
   let mayor = numeros[0];
-const numeros = [1,2,3,4];
+
   for (let i = 1; i < numeros.length; i++) {
     if (numeros[i] > mayor) {
       mayor = numeros[i];
@@ -133,13 +133,37 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+  const arguments = [1,2,3,4];
 
- if (arguments ) 
+  if (arguments.length === 0) {
+    return 0;
+  }
+
+  let producto = 1;
+
+  for (let i = 0; i < arguments.length; i++) {
+    producto = producto * arguments[i];
+  }
+
+  return producto;
+
 }
+ 
+
 
 function cuentoElementos(arreglo) {
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
+
+  let contador = 0;
+
+  for (let i = 0; i < arreglo.length; i++) {
+    if (arreglo[i] > 18) {
+      contador++;
+    }
+  }
+
+  return contador;
 }
 
 function diaDeLaSemana(numeroDeDia) {
