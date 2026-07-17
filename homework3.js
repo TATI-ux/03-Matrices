@@ -242,8 +242,8 @@ function empiezaConNueve(n) {
   return false;
 }
 
-console.log(empiezaConNueve(9123)); // true
-console.log(empiezaConNueve(1234)); // false
+console.log(empiezaConNueve(9123)); 
+console.log(empiezaConNueve(1234)); 
 
 
 
@@ -252,20 +252,66 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí
+  if (arreglo.length === 0) {
+    return true; 
+  }
+  const primerElemento = arreglo[0];
+  for (let i = 1; i < arreglo.length; i++) {
+    if (arreglo[i] !== primerElemento) {
+      return false;
+    }
+  }
+  return true;
 }
+console.log(todosIguales([1, 1, 1, 1]));
+console.log(todosIguales([1, 2, 1, 1]));
+
+
+
+
+
 
 function mesesDelAño(array) {
   //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
+  let mesesEncontrados = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre") {
+      mesesEncontrados.push(array[i]);
+    }
+  }
+
+  if (mesesEncontrados.length === 3) {
+    return mesesEncontrados;
+  } else {
+    return "No se encontraron los meses pedidos";
+  }
 }
 
-function mayorACien(array) {
-  //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
-  //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
-  // Tu código:
+console.log(mesesDelAño(["Febrero", "Enero", "Marzo", "Junio", "Mayo", "Abril", "Julio", "Agosto", "Noviembre", "Octubre", "Septiembre", "Diciembre"]));
+console.log(mesesDelAño(["Febrero", "Marzo", "Junio", "Mayo", "Abril", "Julio", "Agosto", "Noviembre", "Octubre", "Septiembre", "Diciembre"]));
+
+
+  function mayorACien(array) {
+    //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
+    //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
+    // Tu código:
+  let valoresMayores = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 100) {
+      valoresMayores.push(array[i]);
+    }
+  }
+  return valoresMayores;
 }
+
+console.log(mayorACien([50, 75, 100, 150, 175, 2512]));
+
+
 
 function breakStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
@@ -275,7 +321,20 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  for (let i = 0; i < 10; i++) {
+    numero += 2;
+    if (numero === i) {
+      return "Se interrumpió la ejecución";
+    }
+  }
+  return numero;
 }
+console.log(breakStatement(5));
+console.log(breakStatement(10));
+
+
+
+
 
 function continueStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
@@ -284,49 +343,94 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+      continue;
+    }
+    numero += 2;
+  }
+  return numero;
 }
+console.log(continueStatement(5));
+console.log(continueStatement(10));
+
+
+
+
 
 function buscarIndice(array, elemento) {
   // Usa el método `.indexOf` para devolver el índice de "elemento" dentro de "array".
   // Si el elemento no existe, devuelve -1.
   // Tu código:
+  return array.indexOf(elemento);
 }
+console.log(buscarIndice(["manzana", "banana", "naranja"], "banana"));
+
 
 function cortarArray(array, inicio, fin) {
   // Usa el método `.slice` para devolver una copia del array desde "inicio" hasta "fin" (sin incluir "fin").
   // No modificar el array original.
   // Tu código:
+  return array.slice(inicio, fin);
 }
+console.log(cortarArray(["manzana", "banana", "naranja", "kiwi"], 1, 3));
+
+
 
 function eliminarElementos(array, inicio, cantidad) {
   // Usa el método `.splice` para eliminar "cantidad" elementos desde la posición "inicio".
   // Devuelve el array modificado.
   // Tu código:
+  return array.splice(inicio, cantidad);
 }
+console.log(eliminarElementos(["manzana", "banana", "naranja", "kiwi"], 1, 2));
+
 
 function invertirArray(array) {
   // Usa el método `.reverse` para invertir el orden de los elementos del array.
   // Devuelve el array invertido.
   // Tu código:
+  return array.reverse();
 }
+console.log(invertirArray(["manzana", "banana", "naranja", "kiwi"]));
+
+
+
+
 
 function unirArrays(array1, array2) {
   // Usa el método `.concat` para unir "array1" y "array2" en uno nuevo.
   // Devuelve el nuevo array sin modificar los originales.
   // Tu código:
+  return array1.concat(array2);
 }
+
+
+console.log(unirArrays(["manzana", "banana"], ["naranja", "kiwi"]));
 
 function duplicarElementos(array) {
   // "array" debe ser una matriz de enteros.
   // Usa el método `.map` para devolver un nuevo array con cada elemento multiplicado por 2.
   // Tu código:
+  return array.map((element) => element * 2);
 }
+
+
+console.log(duplicarElementos([1, 2, 3, 4]));
+
+
+
 
 function imprimirElementos(array) {
   // Usa el método `.forEach` para imprimir (console.log) cada elemento del array.
   // No devuelve nada (undefined).
   // Tu código:
+  array.forEach((element) => console.log(element)); 
 }
+
+console.log(imprimirElementos(["manzana", "banana", "naranja", "kiwi"]));
+
+
 
 // No modificar nada debajo de esta línea
 // --------------------------------
