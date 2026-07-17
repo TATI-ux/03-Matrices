@@ -10,55 +10,69 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
-  const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
-  console.log(nombresEstudiantes[1]); 
-} 
+ function devolverPrimerElemento(array) {
+  return array[0];
+}
+}
+console.log(devolverPrimerElemento(['Martin', 'Antonio', 'Sara', 'Samuel']));
+
+
+
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
-  const nombresEstudiantes = ['martin', 'Antonio', 'manuel', 'Samuel'];
- console.log(nombresEstudiantes[nombresEstudiantes.length - 1]);
+  return array[array.length - 1];
 }
+ console.log(devolverUltimoElemento(['martin', 'Antonio', 'manuel', 'Samuel']));
+
+
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
-  const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
-  console.log(nombresEstudiantes.length);
+  return array.length;
 }
+console.log(obtenerLargoDelArray(['martin', 'Antonio', 'manuel', 'Samuel']));
+
 
 function incrementarPorUno(array) {
   // "array" debe ser una matriz de enteros (int/integers)
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  const array = [1, 2, 3, 4];
-
   for (let i = 0; i < array.length; i++) {
     array[i]++;
   }
 
   return array;
 }
+console.log(incrementarPorUno([1, 2, 3, 4]));
 
 
 function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
-  const nombresEstudiantes = ['felipe', 'Anto', 'antonio', 'salmon'];
-   console.log(nombresEstudiantes.length.push(ALBERTO));
+  array.push(elemento);
+  return array;
 }
+console.log(agregarItemAlFinalDelArray(["Felipe", "Anto", "Alonso"], "ALBERTO"));
+
+
+
 
 function agregarItemAlComienzoDelArray(array, elemento) {
   // Añade el "elemento" al comienzo del array
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
-  const nombresEstudiantes = ['felipe', 'Anto', 'antonio', 'salmon'];
-   console.log(nombresEstudiantes.unshift(ALBERTO));
+  array.unshift(elemento);
+  return array;
 }
+
+console.log(agregarItemAlComienzoDelArray(["Felipe", "Anto", "Alonso"], "ALBERTO"));
+
 
 
 function dePalabrasAFrase(palabras) {
@@ -67,25 +81,35 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  const palabras = ['Hello', 'world'];
-console.log(palabras.join(' '));  
+  return palabras.join(" ");
 }
+
+console.log(dePalabrasAFrase(["Hello", "world!"]));
+
+
+
+
 
 function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  const frutardas = ["uva", "banana", "manzana"];
-  
-  console.log(frutas.includes('naranja')); 
-console.log(frutas.includes('uva'));     
+ 
+  return array.includes(elemento);
 }
+
+console.log(arrayContiene(["uva", "banana", "manzana"], "naranja"));
+console.log(arrayContiene(["uva", "banana", "manzana"], "uva"));
+
+
+
+
 
 function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
- const numeros = [1,2,3,4];
+
 
   let suma = 0;
 
@@ -95,6 +119,10 @@ function agregarNumeros(numeros) {
 
   return suma;
 }
+console.log(agregarNumeros([1, 2, 3, 4]));
+
+
+
 
 
 function promedioResultadosTest(resultadosTest) {
@@ -208,11 +236,14 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
+  if (n.toString().startsWith("9")) {
+    return true;
+  }
+  return false;
 }
 
-
-
-
+console.log(empiezaConNueve(9123)); // true
+console.log(empiezaConNueve(1234)); // false
 
 
 
